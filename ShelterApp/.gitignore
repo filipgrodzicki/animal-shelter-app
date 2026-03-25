@@ -1,0 +1,81 @@
+## .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+## Visual Studio
+.vs/
+*.vspscc
+*.vssscc
+
+## JetBrains Rider
+.idea/
+*.sln.iml
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+
+## NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Web workbench
+.sass-cache/
+
+## User-specific files
+*.rsuser
+*.userprefs
+
+## Publish profiles
+PublishScripts/
+
+## OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+## Environment files
+.env
+.env.local
+*.env
+appsettings.*.local.json

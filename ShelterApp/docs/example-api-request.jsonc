@@ -1,0 +1,34 @@
+{
+  // Model LLM (Llama 3.3 przez Groq API)
+  "model": "llama-3.3-70b-versatile",
+
+  // Tablica wiadomosci
+  "messages": [
+    {
+      // Prompt systemowy - instrukcje dla AI
+      "role": "system",
+      "content": "[ROLA] Jestes asystentem schroniska...\n[TEMATY] adopcja, procedury, godziny...\n[ZASADY] Odpowiadaj na podstawie kontekstu...\n[KONTEKST RAG] FAQ + info o schronisku...\n[FALLBACK] brak danych -> kontakt ze schroniskiem"
+    },
+    {
+      // Poprzednia wiadomosc uzytkownika
+      "role": "user",
+      "content": "Poprzednie pytanie..."
+    },
+    {
+      // Poprzednia odpowiedz chatbota
+      "role": "assistant",
+      "content": "Poprzednia odpowiedz..."
+    },
+    {
+      // Aktualne pytanie uzytkownika
+      "role": "user",
+      "content": "Jakie sa godziny otwarcia?"
+    }
+  ],
+
+  // Limit tokenow w odpowiedzi
+  "max_tokens": 1024,
+
+  // Temperatura (kreatywnosc) 0.0 - 2.0
+  "temperature": 0.3
+}

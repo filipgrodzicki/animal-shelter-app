@@ -1,0 +1,119 @@
+services:
+  # ===========================================
+  # React Frontend
+  # ===========================================
+  frontend:
+    build:
+      context: ../shelter-frontend
+      dockerfile: Dockerfile
+    container_name: shelter-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    networks:
+      - shelter-network
+    restart: unless-stopped
+
+  # ===========================================
+  # ASP.NET Core API
+  # ===========================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shelter-api
+    user: root
+    ports:
+      - "5000:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: ${DB_CONNECTION_STRING}
+      Database__EnableAutoMigration: true
+      Jwt__Secret: ${JWT_SECRET}
+      Jwt__Issuer: ShelterApp
+      Jwt__Audience: ShelterApp
+      Jwt__AccessTokenExpirationMinutes: 60
+      Jwt__RefreshTokenExpirationDays: 7
+      Chatbot__OpenAiApiKey: ${GROQ_API_KEY:-}
+      # Email settings
+      Email__EnableSending: ${EMAIL_ENABLE_SENDING:-false}
+      Email__FromEmail: ${EMAIL_FROM:-schronisko.dla.zwierzat@outlook.com}
+      Email__FromName: ${EMAIL_FROM_NAME:-Schronisko dla Zwierząt}
+      Email__Smtp__Host: ${EMAIL_SMTP_HOST:-smtp-mail.outlook.com}
+      Email__Smtp__Port: ${EMAIL_SMTP_PORT:-587}
+      Email__Smtp__UseSsl: ${EMAIL_SMTP_SSL:-true}
+      Email__Smtp__Username: ${EMAIL_SMTP_USERNAME:-}
+      Email__Smtp__Password: ${EMAIL_SMTP_PASSWORD:-}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - shelter-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ===========================================
+  # PostgreSQL Database
+  # ===========================================
+  db:
+    image: postgres:16-alpine
+    container_name: shelter-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - shelter-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ===========================================
+  # pgAdmin - Database Management UI (opcjonalne)
+  # ===========================================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: shelter-pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@shelter.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - shelter-network
+    restart: unless-stopped
+    profiles:
+      - tools
+
+volumes:
+  postgres-data:
+    name: shelter-postgres-data
+  pgadmin-data:
+    name: shelter-pgadmin-data
+
+networks:
+  shelter-network:
+    name: shelter-network
+    driver: bridge

@@ -1,0 +1,23 @@
+{
+  "model": "llama-3.3-70b-versatile",
+  "messages": [
+    {
+      "role": "system",
+      "content": "<prompt systemowy + kontekst RAG>"
+    },
+    {
+      "role": "user",
+      "content": "Poprzednie pytanie..."
+    },
+    {
+      "role": "assistant",
+      "content": "Poprzednia odpowiedz..."
+    },
+    {
+      "role": "user",
+      "content": "Jakie sa godziny otwarcia?"
+    }
+  ],
+  "max_tokens": 1024,
+  "temperature": 0.3
+}

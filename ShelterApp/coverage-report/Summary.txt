@@ -1,0 +1,87 @@
+Summary
+  Generated on: 30.01.2026 - 19:56:43
+  Coverage date: 30.01.2026 - 19:55:38
+  Parser: Cobertura
+  Assemblies: 1
+  Classes: 65
+  Files: 33
+  Line coverage: 78.6%
+  Covered lines: 1788
+  Uncovered lines: 484
+  Coverable lines: 2272
+  Total lines: 5737
+  Branch coverage: 75.8% (517 of 682)
+  Covered branches: 517
+  Total branches: 682
+  Method coverage: 78.3% (253 of 323)
+  Full method coverage: 72.1% (233 of 323)
+  Covered methods: 253
+  Fully covered methods: 233
+  Total methods: 323
+
+ShelterApp.Domain                                                            78.6%
+  ShelterApp.Domain.Adoptions.Adopter                                        98.6%
+  ShelterApp.Domain.Adoptions.AdopterStatusChange                             100%
+  ShelterApp.Domain.Adoptions.AdoptionApplication                              99%
+  ShelterApp.Domain.Adoptions.AdoptionApplicationStatusChange                 100%
+  ShelterApp.Domain.Adoptions.AdoptionContract                                100%
+  ShelterApp.Domain.Adoptions.Events.AdopterInfoUpdatedEvent                    0%
+  ShelterApp.Domain.Adoptions.Events.AdopterRegisteredEvent                   100%
+  ShelterApp.Domain.Adoptions.Events.AdopterStatusChangedEvent                100%
+  ShelterApp.Domain.Adoptions.Events.AdoptionApplicationCreatedEvent          100%
+  ShelterApp.Domain.Adoptions.Events.AdoptionApplicationStatusChangedEvent    100%
+  ShelterApp.Domain.Adoptions.Events.AdoptionCompletedEvent                   100%
+  ShelterApp.Domain.Adoptions.Events.ApplicationCancelledEvent                  0%
+  ShelterApp.Domain.Adoptions.Events.ApplicationRejectedEvent                   0%
+  ShelterApp.Domain.Adoptions.Events.ApplicationTakenForReviewEvent             0%
+  ShelterApp.Domain.Adoptions.Events.ContractGeneratedEvent                     0%
+  ShelterApp.Domain.Adoptions.Events.VisitCompletedEvent                        0%
+  ShelterApp.Domain.Adoptions.Events.VisitScheduledEvent                        0%
+  ShelterApp.Domain.Animals.Animal                                            100%
+  ShelterApp.Domain.Animals.Entities.AnimalNote                                 0%
+  ShelterApp.Domain.Animals.Entities.AnimalPhoto                             85.1%
+  ShelterApp.Domain.Animals.Entities.AnimalStatusChange                       100%
+  ShelterApp.Domain.Animals.Entities.MedicalRecord                           48.8%
+  ShelterApp.Domain.Animals.Entities.MedicalRecordAttachment                    0%
+  ShelterApp.Domain.Animals.Events.AnimalAdmittedEvent                        100%
+  ShelterApp.Domain.Animals.Events.AnimalAdoptedEvent                         100%
+  ShelterApp.Domain.Animals.Events.AnimalDeceasedEvent                        100%
+  ShelterApp.Domain.Animals.Events.AnimalPhotoAddedEvent                      100%
+  ShelterApp.Domain.Animals.Events.AnimalStatusChangedEvent                   100%
+  ShelterApp.Domain.Animals.Events.MedicalRecordAddedEvent                    100%
+  ShelterApp.Domain.Appointments.VisitBooking                                95.5%
+  ShelterApp.Domain.Appointments.VisitSlot                                   94.9%
+  ShelterApp.Domain.Chatbot.ChatMessage                                        55%
+  ShelterApp.Domain.Chatbot.ChatSession                                      95.7%
+  ShelterApp.Domain.Chatbot.UserProfile                                         0%
+  ShelterApp.Domain.Cms.BlogPost                                             98.7%
+  ShelterApp.Domain.Cms.ContentPage                                           100%
+  ShelterApp.Domain.Cms.FaqItem                                               100%
+  ShelterApp.Domain.Common.AdopterInfo                                          0%
+  ShelterApp.Domain.Common.AggregateRoot<T>                                  69.2%
+  ShelterApp.Domain.Common.Entity<T>                                           73%
+  ShelterApp.Domain.Common.Error                                             83.3%
+  ShelterApp.Domain.Common.PagedResult<T>                                    81.2%
+  ShelterApp.Domain.Common.Result                                            83.3%
+  ShelterApp.Domain.Common.Result<T>                                          100%
+  ShelterApp.Domain.Common.ResultExtensions                                   100%
+  ShelterApp.Domain.Emails.EmailQueue                                         100%
+  ShelterApp.Domain.Emails.EmailTemplateModel                                 100%
+  ShelterApp.Domain.Notifications.AdminNotification                             0%
+  ShelterApp.Domain.Users.ApplicationRole                                    69.2%
+  ShelterApp.Domain.Users.ApplicationUser                                    53.7%
+  ShelterApp.Domain.Users.AppRoles                                            100%
+  ShelterApp.Domain.Users.RefreshToken                                       57.1%
+  ShelterApp.Domain.Volunteers.Attendance                                    33.7%
+  ShelterApp.Domain.Volunteers.Events.VolunteerActivatedEvent                 100%
+  ShelterApp.Domain.Volunteers.Events.VolunteerApplicationSubmittedEvent      100%
+  ShelterApp.Domain.Volunteers.Events.VolunteerHoursRecordedEvent             100%
+  ShelterApp.Domain.Volunteers.Events.VolunteerInfoUpdatedEvent                 0%
+  ShelterApp.Domain.Volunteers.Events.VolunteerResignedEvent                    0%
+  ShelterApp.Domain.Volunteers.Events.VolunteerStatusChangedEvent             100%
+  ShelterApp.Domain.Volunteers.Events.VolunteerSuspendedEvent                   0%
+  ShelterApp.Domain.Volunteers.ScheduleSlot                                     0%
+  ShelterApp.Domain.Volunteers.Volunteer                                     98.4%
+  ShelterApp.Domain.Volunteers.VolunteerAssignment                              0%
+  ShelterApp.Domain.Volunteers.VolunteerCertificate                          65.3%
+  ShelterApp.Domain.Volunteers.VolunteerStatusChange                          100%

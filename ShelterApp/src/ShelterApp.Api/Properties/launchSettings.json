@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ShelterApp.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:23054;http://localhost:23055"
+    }
+  }
+}

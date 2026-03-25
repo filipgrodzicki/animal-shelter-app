@@ -1,0 +1,21 @@
+{
+  "id": "chatcmpl-abc123xyz",
+  "object": "chat.completion",
+  "created": 1709654321,
+  "model": "llama-3.3-70b-versatile",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Burek to wspaniały pies! Na podstawie informacji które posiadam, mogę powiedzieć że:\n\n- Jest 3-letnim mieszańcem\n- Uwielbia spacery i zabawę\n- Dobrze dogaduje się z dziećmi\n- Jest już dorosły, więc jego charakter jest w pełni ukształtowany\n\nJeśli chcesz poznać szczegółowe wymagania dotyczące adopcji Burka (np. warunki mieszkaniowe, doświadczenie), zalecam kontakt bezpośrednio ze schroniskiem. Czy mogę Ci w czymś jeszcze pomóc?"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 542,
+    "completion_tokens": 128,
+    "total_tokens": 670
+  }
+}

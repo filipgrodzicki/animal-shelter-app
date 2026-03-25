@@ -1,0 +1,14 @@
+# Development overrides
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+
+version: '3.8'
+
+services:
+  api:
+    build:
+      target: build
+    volumes:
+      - ./src:/src
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_ENVIRONMENT=Development

@@ -1,0 +1,9 @@
+{
+  "matching_weights": {
+    "experience": 0.30,
+    "space": 0.20,
+    "care_time": 0.20,
+    "children": 0.15,
+    "other_animals": 0.15
+  }
+}
